@@ -1,0 +1,100 @@
+.footer {
+  overflow: auto;
+  margin: 0;
+  text-align: center;
+
+  @include breakpoint(medium) {
+    text-align: left;
+  }
+}
+
+.stay-connected {
+  min-height: 200px;
+  margin-bottom: -8px;
+  padding: 2.5em 0;
+  color: $white;
+  text-align: center;
+  background: radial-gradient(ellipse at center, rgba(136,144,146,1) 0%,rgba(109,110,114,1) 50%);
+
+  h2 {
+    font-size: 1.4em;
+  }
+}
+
+.footer-widgets {
+  position: relative;
+  z-index: 0;
+  font-size: 0.85rem;
+  background: #F9F9F9;
+
+  &:before,
+  &:after {
+    position: absolute;
+    z-index: -1;
+    display: block;
+    width: 100%;
+    height: 8px;
+    content: '';
+    background: $white;
+  }
+
+  &:before {
+    top: 0;
+  }
+
+  &:after {
+    bottom: 0;
+  }
+
+  &.has-connect-bar:before{
+    background: rgba(109,110,114,1);
+  }
+
+  aside {
+    padding: 2em 0;
+
+    @include breakpoint(large) {
+      padding: 3em 0 0 0;
+    }
+  }
+}
+
+.church-address {
+    margin-bottom: 2.3em;
+}
+
+.service-time {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.columns.footer-feature-one  {
+  padding-bottom: 2em;
+
+  @include breakpoint(medium) {
+    padding-right: 0.7em;
+    padding-bottom: 0;
+  }
+
+  img {
+    margin: 0 auto;
+  }
+}
+
+.columns.footer-feature-two {
+  padding-bottom: 2em;
+
+  @include breakpoint(medium) {
+    padding-left: 0.7em;
+    padding-bottom: 0;
+  }
+
+  img {
+    margin: 0 auto;
+  }
+}
+
+.copyright {
+  margin-top: 3rem;
+  font-size: 0.895em;
+}

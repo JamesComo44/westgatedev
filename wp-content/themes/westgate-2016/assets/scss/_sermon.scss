@@ -1,0 +1,29 @@
+.sermon-content,
+.sermon-sidebar {
+  padding-top: 4em;
+  padding-bottom: 4em;
+  padding-left: 0;
+}
+
+.sermon-sidebar.columns {
+  background: #F9F9F9;
+  
+  padding-right: 0;
+}
+
+.mejs-container {
+  margin-bottom: 2em;
+}
+
+.current-series {
+
+  header {
+    padding: 0 1em;
+  }
+}
+
+.current-series-heading {
+  font-size: 0.75em;
+  color: map-get($foundation-palette, primary);
+  text-transform: uppercase;
+}

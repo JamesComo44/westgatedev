@@ -1,0 +1,101 @@
+.header {
+  padding: 2em 0;
+
+  .menu > .logo-list-item {
+    display: block;
+
+    > .logo {
+      margin: 0;
+      padding: 0;
+
+      img {
+        display: block;
+        margin: 1em auto;
+        max-width: 300px;
+        width: 100%;
+
+        @include breakpoint(large) {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+.header {
+  ul.off-canvas-list li {
+    list-style: none;
+  }
+
+  a {
+    color: #333;
+  }
+}
+
+.top-bar-left {
+  margin: 0;
+  padding: 0;
+}
+
+.top-bar-menu {
+  .top-bar-right {
+    margin-top: 0.8rem;
+    text-align: center;
+
+    ul {
+      display: inline-block;
+
+      @include breakpoint(large) {
+        float: right;
+      }
+    }
+
+    li:last-child {
+      a {
+        margin: 0 0.2em;
+        padding: 0.5em 1.3em;
+        color: #FFFFFF;
+        text-transform: uppercase;
+        background: map-get($foundation-palette, primary);
+      }
+    }
+  }
+
+  .menu > li > a {
+    font-size: 0.8em;
+
+    @include bp (1200px) {
+      margin: 0 1.5em;
+      padding: 0.5em 0;
+      font-size: 1em;
+    }
+  }
+}
+
+.menu .active a {
+  border-bottom: solid 4px map-get($foundation-palette, secondary);
+  color: #333;
+  background: none;
+}
+
+.mobile-menu {
+  display: block;
+  clear: both;
+  margin: 0;
+  padding: 1em 0 0 0;
+  list-style: none;
+
+  li {
+    width: 100%;
+  }
+}
+
+.header .mobile-menu-button {
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  font-weight: bold;
+  color: $white;
+  background: map-get($foundation-palette, secondary);
+}

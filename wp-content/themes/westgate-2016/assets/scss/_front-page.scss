@@ -1,0 +1,75 @@
+/*********************
+FRONT PAGE STYLES
+*********************/
+
+.triple-feature {
+  position: relative;
+  z-index: 2;
+
+  @include breakpoint(medium) {
+    margin-top: -15px;
+  }
+
+  > div {
+    @include breakpoint(small only) {
+      padding: 1em;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.double-feature {
+  overflow: auto;
+  margin-bottom: 1em;
+  clear: both;
+  padding-top: 1.7em;
+}
+
+.double-feature-section {
+  position: relative;
+  padding: 1em;
+
+  @include breakpoint(medium) {
+    padding: 0;
+  }
+}
+
+.double-feature-btn {
+  display: block;
+  margin: 1em auto;
+  padding: 0 0 0 1.3rem;
+  white-space: nowrap;
+  font-size: 14px;
+  line-height: 2.8;
+
+  @include breakpoint(large) {
+    position: absolute;
+    z-index: 2;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    font-size: 18px;
+  }
+
+  &:after {
+    display: inline-block;
+    float: right;
+    margin-left: 1.3em;
+    width: 2.8em;
+    height: 2.8em;
+    content: ">";
+    text-align: center;
+    font-weight: bold;
+    background: rgba($black, 0.13);
+
+    @include breakpoint(large) {
+      float: none;
+      height: 2.83em;
+    }
+  }
+}
