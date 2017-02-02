@@ -18,7 +18,7 @@
 													4010 Fambrough Dr. <br>
 													Powder Springs, GA 30127 <br>
 												</address>
-												
+
 												<h2 class="service-time">SUNDAYS at 10:30</h2>
 											</aside>
 											<aside class="medium-6 columns">
@@ -36,13 +36,13 @@
 										</div>
 										<div class="medium-6 columns medium-collapse">
 											<div class="medium-6 columns footer-feature-one">
-												<a href="/kids">
+												<a href="/kids/">
 													<img src="<?php bloginfo('template_directory'); ?>/assets/images/kids.jpg" alt="">
 												</a>
 											</div>
 
 											<div class="medium-6 columns footer-feature-two">
-												<a href="/students">
+												<a href="/students/">
 													<img src="<?php bloginfo('template_directory'); ?>/assets/images/pulse.jpg" alt="">
 												</a>
 											</div>
