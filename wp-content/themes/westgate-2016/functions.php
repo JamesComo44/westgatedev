@@ -126,7 +126,8 @@ function wg_meta_boxes( $meta_boxes ) {
             array(
                 'name' => __( 'URL', 'wg_feat_1_' ),
                 'id'   => "{$prefix}url1",
-                'type' => 'url',
+                'type' => 'text',
+                'size' => '50',
                 'std'  => 'http://westgatechurch.com/',
             ),
         ),
@@ -147,7 +148,8 @@ function wg_meta_boxes( $meta_boxes ) {
             array(
                 'name' => __( 'URL', 'wg_feat_2_' ),
                 'id'   => "{$prefix}url2",
-                'type' => 'url',
+                'type' => 'text',
+                'size' => '50',
                 'std'  => 'http://westgatechurch.com/',
             ),
         ),
