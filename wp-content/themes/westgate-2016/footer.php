@@ -23,10 +23,10 @@
 											</aside>
 											<aside class="medium-6 columns">
 												<h2 class="footer-social-title">Follow Us</h2>
-												<a class="footer-social-icon" href="https://www.facebook.com/mywgc">
+												<a class="footer-social-icon" href="https://www.facebook.com/mywgc" target="_blank">
 													<img src="<?php bloginfo('template_directory'); ?>/assets/images/facebook.png" alt="Find us on Facebook">
 												</a>
-												<a class="footer-social-icon" href="https://twitter.com/westgate_church">
+												<a class="footer-social-icon" href="https://twitter.com/westgate_church" target="_blank">
 													<img src="<?php bloginfo('template_directory'); ?>/assets/images/twitter.png" alt="Follow us on Twitter">
 												</a>
 												<a class="footer-social-icon" href="mailto:heath.houston@me.com">
