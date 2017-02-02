@@ -2,22 +2,12 @@
 .sermon-sidebar {
   padding-top: 4em;
   padding-bottom: 4em;
-}
-
-@media screen and (min-width: 40em) {
-
-  .sermon-content {
-    padding-left: 0;
-  }
-}
-
-.sermon-sidebar {
   padding-left: 0;
 }
 
 .sermon-sidebar.columns {
   background: #F9F9F9;
-
+  
   padding-right: 0;
 }
 
