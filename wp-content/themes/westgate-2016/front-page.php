@@ -18,11 +18,11 @@
 
     $sermon_query = new WP_Query($args);
   ?>
-  
+
   <div id="content">
     <div class="hero">
       <img src="<?php bloginfo('template_directory'); ?>/assets/images/home_hero.jpg" alt="">
-      <h1 class="hero-message">Love God, Love People, Be Transparent</h1>
+      <h1 class="hero-message">Love God, Leave a Legacy, Live on Mission</h1>
     </div>
     <div id="inner-content" class="row">
       <main id="main" role="main">
@@ -34,7 +34,7 @@
             </a>
           </div>
 
-          <div class="medium-4 columns">  
+          <div class="medium-4 columns">
             <?php if ( $sermon_query->have_posts() ) : while ( $sermon_query->have_posts() )  : $sermon_query->the_post(); ?>
               <a href="<?php the_permalink(); ?>">
                 <img class="series-banner" src="<?php bloginfo('template_directory'); ?>/assets/images/latest_series_banner.png" alt="">
@@ -64,9 +64,9 @@
             </div>
           </div>
         </div>
-                    
+
       </main> <!-- end #main -->
-        
+
     </div> <!-- end #inner-content -->
 
   </div> <!-- end #content -->
