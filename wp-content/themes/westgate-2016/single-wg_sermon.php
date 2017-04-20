@@ -40,7 +40,7 @@
 
                   $series_query = new WP_Query( $args );
 
-                  $series_description = term_description( $tax[0]->term_id, $slug );
+                  $series_description = term_description( $tax[0]->term_id, 'series' );
                 ?>
 
                 <?php if ( $series_query->have_posts() && ! empty( $series_description ) ): ?>

@@ -4282,6 +4282,9 @@ HEADER STYLES
       padding: 0.5em 0;
       font-size: 1em; } }
 
+.menu > .menu-item {
+  height: 36px; }
+
 .menu > .menu-item > a:hover {
   border-bottom: solid 4px rgba(168, 204, 78, 0.4); }
 
