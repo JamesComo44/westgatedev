@@ -8,7 +8,7 @@
 
     <div id="inner-content" class="row">
 
-        <main id="main" role="main" class="medium-10 medium-offset-1">
+        <main id="main" role="main" class="medium-12">
           <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
             <div class="medium-7 columns sermon-content">
 
