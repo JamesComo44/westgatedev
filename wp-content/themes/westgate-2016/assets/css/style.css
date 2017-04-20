@@ -4273,7 +4273,9 @@ HEADER STYLES
         float: right; } }
 
 .top-bar-menu .menu > li > a {
-  font-size: 0.8em; }
+  font-size: 0.8em;
+  margin: 0 1.5em;
+  padding: 0.5em 0; }
   @media (min-width: 1200px) {
     .top-bar-menu .menu > li > a {
       margin: 0 1.5em;
@@ -4281,14 +4283,12 @@ HEADER STYLES
       font-size: 1em; } }
 
 .menu > .menu-item > a:hover {
-  border-bottom: solid 4px rgba(168, 204, 78, 0.4);
-  transform: translateY(2px); }
+  border-bottom: solid 4px rgba(168, 204, 78, 0.4); }
 
 .menu .active a {
   border-bottom: solid 4px #A8CC4E !important;
   color: #333;
-  background: none;
-  transform: translateY(0) !important; }
+  background: none; }
 
 .mobile-menu {
   display: block;
@@ -4465,9 +4465,14 @@ SERMON POST TYPE STYLES
 *********************/
 .sermon-content,
 .sermon-sidebar {
-  padding-top: 4em;
   padding-bottom: 4em;
   padding-left: 0; }
+
+.sermon-content {
+  padding-top: 4em; }
+
+.sermon-sidebar {
+  padding-top: 2em; }
 
 .sermon-sidebar.columns {
   background: #F9F9F9;

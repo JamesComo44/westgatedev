@@ -3,9 +3,16 @@ SERMON POST TYPE STYLES
 *********************/
 .sermon-content,
 .sermon-sidebar {
-  padding-top: 4em;
   padding-bottom: 4em;
   padding-left: 0;
+}
+
+.sermon-content {
+  padding-top: 4em;
+}
+
+.sermon-sidebar {
+  padding-top: 2em;
 }
 
 .sermon-sidebar.columns {

@@ -40,7 +40,13 @@
 
                   $series_query = new WP_Query( $args );
 
+                  $series_description = term_description( $tax[0]->term_id, $slug );
                 ?>
+
+                <?php if ( $series_query->have_posts() && ! empty( $series_description ) ): ?>
+                  <div class="current-series-description"><?php echo $series_description; ?></div>
+                <?php endif; ?>
+
                 <ol class="related-sermons-list">
                   <?php while ( $series_query->have_posts() ) :  $series_query->the_post(); ?>
 
