@@ -8,7 +8,7 @@
 
 		<div id="inner-content" class="row">
 			<div class="medium-10 medium-offset-1">
-		    <main id="main" role="main" class="medium-10 columns main-page-content">
+		    <main id="main" role="main" class="medium-12 columns main-page-content">
 
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 

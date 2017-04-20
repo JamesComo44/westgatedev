@@ -21,10 +21,10 @@
 
     <div id="inner-content" class="row">
       <main class="medium-10 medium-offset-1 sermons-page-content">
-        <?php if ( $series_query->have_posts() ) : while ( $series_query->have_posts() )  : $series_query->the_post(); ?>
+        <?php if ( $series_query->have_posts() ) : while ( $series_query->have_posts() ) : $series_query->the_post(); ?>
           <?php
             $current_series = get_the_terms(get_the_ID(), 'series');
-            $current_series = $current_series[0]->slug
+            $current_series = $current_series[0]->slug;
           ?>
           <?php if ($current_series !== $prev_series): ?>
             <div class="medium-3 columns sermon-page-column">

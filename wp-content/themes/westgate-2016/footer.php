@@ -1,14 +1,14 @@
 					<footer class="footer" role="contentinfo">
-						<?php if ( false ): // originally (is_home() || is_front_page()) ?>
+						<?php /* if ( false ): // originally (is_home() || is_front_page()) ?>
 							<?php $inner_footer_class = "" ?>
 						<?php elseif (false):  // originally just else ?>
 							<?php $inner_footer_class = " has-connect-bar" ?>
 							<aside class="stay-connected">
 								<h2>Stay Connected and Informed</h2>
 							</aside>
-						<?php endif ?>
+						<?php endif; */ ?>
 						<div id="inner-footer">
-							<div class="footer-widgets<?php echo $inner_footer_class ?>">
+							<div class="footer-widgets">
 								<div class="row">
 									<div class="medium-10 medium-offset-1">
 										<div class="medium-6 columns">
