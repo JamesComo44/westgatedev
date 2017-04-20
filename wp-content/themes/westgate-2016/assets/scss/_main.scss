@@ -8,6 +8,10 @@ Stylesheet: Main Stylesheet
 GENERAL STYLES
 *********************/
 
+body {
+  font-family: 'Open Sans', helvetica, sans-serif;
+}
+
 img {
 	display: block;
 }
@@ -38,7 +42,7 @@ a, a:visited {
 		color: $white;
 		background: darken(map-get($foundation-palette, primary), 10%);
 	}
-	
+
 	&.btn-alt {
 		background: map-get($foundation-palette, secondary);
 		transition: background ease 0.15s;
@@ -73,7 +77,7 @@ h3, .h3 {
 }
 
 h4, .h4 {
-	
+
 }
 
 h5, .h5 {
@@ -85,7 +89,7 @@ h5, .h5 {
 	margin: 0 auto;
 }
 
-    
+
 /*********************
 NAVIGATION STYLES
 *********************/
@@ -93,7 +97,7 @@ NAVIGATION STYLES
 	.title-area {
 		z-index: 1;
 	}
-} 
+}
 
 .off-canvas-list {
 	ul {
@@ -116,19 +120,29 @@ HERO STYLES
 	position: relative;
   margin: 0 auto;
   max-width: 1280px;
+
+	img {
+		min-width: 900px;
+	}
 }
 
 .hero-message {
 	position: absolute;
 	top: 50%;
 	margin: 0;
+	padding: 0 1rem;
 	width: 100%;
 	text-align: center;
 	color: $white;
-	font-size: 2em;
+	font-size: 1.4em;
 	font-style: italic;
 	font-weight: bold;
-	transform: translateY(-50%);	
+  -webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+
+	@media screen and (min-width: 40em) {
+		font-size: 2em;
+	}
 }
 
 /*********************
@@ -141,15 +155,15 @@ POSTS & CONTENT STYLES
 
 .single-title,
 .page-title {
-	
+
 }
 
 .single-title {
-	
+
 }
 
 .page-title {
-	
+
 	// Remove Foundation vcard styling from author page titles
 	.vcard {
 		border: 0px;
@@ -161,37 +175,68 @@ POSTS & CONTENT STYLES
 
 }
 
-// Post meta  
+// Post meta
 .byline {
 	color: #999;
 	time {}
 }
 
-// Entry content  
+.main-page-content {
+	padding-top: 4em;
+}
+
+// Entry content
 .entry-content {
-	
+
+	h1, h2, h3, h4, h5, h6 {
+		font-weight: bold;
+		margin-bottom: 0.8em;
+	}
+
+	h1 {
+		font-size: 1.6em;
+		color: #12A89D;
+	}
+
+	h2 {
+		font-size: 1.4em;
+		color: #12A89D;
+	}
+
+	h3 {
+		font-size: 1.4em;
+	}
+
+	h4, h5, h6 {
+		font-size: 1em;
+	}
+
+	h3, h4, h5, h6 {
+		color: #A8CC4E;
+	}
+
 	img {
 		max-width: 100%;
 		height: auto;
 	}
 
-	.alignleft, img.alignleft { 
-		margin-right: 1.5em; 
-		display: inline; 
-		float: left; 
+	.alignleft, img.alignleft {
+		margin-right: 1.5em;
+		display: inline;
+		float: left;
 	}
-	.alignright, img.alignright { 
-		margin-left: 1.5em; 
-		display: inline; 
-		float: right; 
+	.alignright, img.alignright {
+		margin-left: 1.5em;
+		display: inline;
+		float: right;
 	}
-	.aligncenter, img.aligncenter { 
-		margin-right: auto; 
-		margin-left: auto; 
-		display: block; 
-		clear: both; 
+	.aligncenter, img.aligncenter {
+		margin-right: auto;
+		margin-left: auto;
+		display: block;
+		clear: both;
 	}
-			
+
 	video, object {
 		max-width: 100%;
 		height: auto;
@@ -202,15 +247,25 @@ POSTS & CONTENT STYLES
 		border: 1px solid #cecece;
 		padding: 10px;
 		}
+}
 
-} 
+blockquote {
+	padding: 1.5em 1.5em 1.5em 5em;
+	border: 0;
+	background: #F9F9F9 url("../images/quote.png") 25px 25px no-repeat;
+	background-size: 40px;
+
+	p:last-child {
+		margin-bottom: 0;
+	}
+}
 
 .wp-caption {
 	max-width: 100%;
 	background: #eee;
 	padding: 5px;
 
-	// Images inside wp-caption  
+	// Images inside wp-caption
 	img {
 		max-width: 100%;
 		margin-bottom: 0;
@@ -222,7 +277,7 @@ POSTS & CONTENT STYLES
 		margin: 4px 0 7px;
 		text-align: center;
 	}
-} 
+}
 
 // Add Foundation styling to password protect button
 .post-password-form input[type="submit"] {
@@ -246,7 +301,7 @@ IMAGE GALLERY STYLES
 
 		dd {}
 
-} 
+}
 
 // Gallery caption styles
 .gallery-caption {}
@@ -299,7 +354,7 @@ COMMENT STYLES
 			.alt {}
 			.odd {}
 			.even {}
-			.depth-1 {}           // Change number for different depth  
+			.depth-1 {}           // Change number for different depth
 			.byuser {}
 			.bypostauthor {}
 			.comment-author-admin {}
@@ -328,7 +383,7 @@ COMMENT STYLES
 	li.depth-4 {}
 	li.depth-5 {}
 
-	// General comment classes  
+	// General comment classes
 	.alt {}
 	.odd {
 	}
@@ -345,7 +400,7 @@ COMMENT STYLES
 	.thread-odd {}
 	.thread-even {}
 
-	// vcard  
+	// vcard
 	.vcard {
 		margin-left: 50px;
 
@@ -382,10 +437,10 @@ COMMENT STYLES
 			background: #fff;
 		}
 
-	} // end .commentlist .vcard  
+	} // end .commentlist .vcard
 
 
-	// comment meta  
+	// comment meta
 	.comment-meta {
 
 		a {}
@@ -398,7 +453,7 @@ COMMENT STYLES
 
 	}
 
-	// comment content  
+	// comment content
 	.comment_content {
 
 		p {
@@ -407,20 +462,20 @@ COMMENT STYLES
 			line-height: 1.5em;
 		}
 
-	} // end .commentlist .comment_content  
+	} // end .commentlist .comment_content
 
-	// comment reply link  
+	// comment reply link
 	.comment-reply-link {
 		float: right;
 
 		&:hover,
 		&:focus {
-		
+
 		}
 
-	} // end .commentlist .comment-reply-link  
+	} // end .commentlist .comment-reply-link
 
-} // end .commentlist  
+} // end .commentlist
 
 /*********************
 COMMENT FORM STYLES
@@ -456,7 +511,7 @@ COMMENT FORM STYLES
 				background: #fff;
 			}
 
-			// form validation  
+			// form validation
 			&:invalid {
 				outline: none;
 				border-color: #fbc2c4;
@@ -484,28 +539,28 @@ COMMENT FORM STYLES
 	}
 }
 
-// comment submit button  
+// comment submit button
 #submit {}
 
-// comment form title  
+// comment form title
 #comment-form-title {
 	margin: 0 0 1.1em;
 }
 
-// cancel comment reply link  
+// cancel comment reply link
 #cancel-comment-reply {
 	a {}
 }
 
-// logged in comments  
+// logged in comments
 .comments-logged-in-as {}
 
-// allowed tags  
+// allowed tags
 #allowed_tags {
 	margin: 1.5em 10px 0.7335em 0;
 }
 
-// No comments  
+// No comments
 .nocomments {
 	margin: 0 20px 1.1em;
 }
@@ -535,7 +590,7 @@ SIDEBARS & ASIDES
 
 			a {}
 
-			// deep nesting  
+			// deep nesting
 			ul {}
 
 		}
@@ -548,7 +603,7 @@ FOOTER STYLES
 	clear: both;
 	margin-top: 1em;
 }
-	
+
 /*********************
 FOUNDATION STYLES
 *********************/

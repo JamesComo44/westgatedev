@@ -7,10 +7,12 @@ FRONT PAGE STYLES
   z-index: 2;
 
   @include breakpoint(medium) {
-    margin-top: -15px;
+    margin-top: -25px;
   }
 
   > div {
+    position: relative;
+
     @include breakpoint(small only) {
       padding: 1em;
     }
@@ -19,6 +21,11 @@ FRONT PAGE STYLES
   img {
     width: 100%;
     height: auto;
+  }
+
+  .series-banner {
+    position: absolute;
+    width: 70%;
   }
 }
 
@@ -51,6 +58,7 @@ FRONT PAGE STYLES
     z-index: 2;
     bottom: 8px;
     left: 50%;
+    -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
     margin: 0;
     font-size: 18px;
@@ -65,7 +73,7 @@ FRONT PAGE STYLES
     content: ">";
     text-align: center;
     font-weight: bold;
-    background: rgba($black, 0.13);
+    background: rgba(10, 10, 10, 0.13);
 
     @include breakpoint(large) {
       float: none;

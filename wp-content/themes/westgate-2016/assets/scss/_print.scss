@@ -3,10 +3,10 @@
 Stylesheet: Print Stylesheet
 
 This is the print stylesheet. There's probably not a lot
-of reasons to edit this stylesheet. 
+of reasons to edit this stylesheet.
 
-Remember to add things that won't make sense to print at 
-the bottom. Things like nav, ads, and forms shouldbe set 
+Remember to add things that won't make sense to print at
+the bottom. Things like nav, ads, and forms shouldbe set
 to display none.
 ******************************************************************/
 @media print {
@@ -15,6 +15,7 @@ to display none.
     background: transparent !important;
     color: black !important;
     text-shadow: none !important;
+    -webkit-filter: none !important;
     filter:none !important;
     -ms-filter: none !important;
   }
@@ -79,5 +80,5 @@ to display none.
     nav {
       display: none;
     }
-    
+
 } // End of media query
