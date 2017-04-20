@@ -4271,15 +4271,12 @@ HEADER STYLES
     @media screen and (min-width: 64em) {
       .top-bar-menu .top-bar-right ul {
         float: right; } }
-  .top-bar-menu .top-bar-right li:last-child a {
-    margin: 0 0.2em;
-    padding: 0.5em 1.3em;
-    color: #FFFFFF;
-    text-transform: uppercase;
-    background: #12A89D; }
 
 .top-bar-menu .menu > li > a {
   font-size: 0.8em; }
+  .top-bar-menu .menu > li > a:hover {
+    border-bottom: solid 4px rgba(168, 204, 78, 0.4);
+    transform: translateY(2px); }
   @media (min-width: 1200px) {
     .top-bar-menu .menu > li > a {
       margin: 0 1.5em;
@@ -4287,9 +4284,10 @@ HEADER STYLES
       font-size: 1em; } }
 
 .menu .active a {
-  border-bottom: solid 4px #A8CC4E;
+  border-bottom: solid 4px #A8CC4E !important;
   color: #333;
-  background: none; }
+  background: none;
+  transform: translateY(0) !important; }
 
 .mobile-menu {
   display: block;

@@ -52,20 +52,15 @@ HEADER STYLES
         float: right;
       }
     }
-
-    li:last-child {
-      a {
-        margin: 0 0.2em;
-        padding: 0.5em 1.3em;
-        color: #FFFFFF;
-        text-transform: uppercase;
-        background: map-get($foundation-palette, primary);
-      }
-    }
   }
 
   .menu > li > a {
     font-size: 0.8em;
+
+    &:hover {
+      border-bottom: solid 4px rgba(168, 204, 78, 0.4);
+      transform: translateY(2px);
+    }
 
     @include bp (1200px) {
       margin: 0 1.5em;
@@ -76,9 +71,10 @@ HEADER STYLES
 }
 
 .menu .active a {
-  border-bottom: solid 4px map-get($foundation-palette, secondary);
+  border-bottom: solid 4px map-get($foundation-palette, secondary) !important;
   color: #333;
   background: none;
+  transform: translateY(0) !important;
 }
 
 .mobile-menu {
