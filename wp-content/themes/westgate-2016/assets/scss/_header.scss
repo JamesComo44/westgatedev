@@ -57,17 +57,17 @@ HEADER STYLES
   .menu > li > a {
     font-size: 0.8em;
 
-    &:hover {
-      border-bottom: solid 4px rgba(168, 204, 78, 0.4);
-      transform: translateY(2px);
-    }
-
     @include bp (1200px) {
       margin: 0 1.5em;
       padding: 0.5em 0;
       font-size: 1em;
     }
   }
+}
+
+.menu > .menu-item > a:hover {
+  border-bottom: solid 4px rgba(168, 204, 78, 0.4);
+  transform: translateY(2px);
 }
 
 .menu .active a {
