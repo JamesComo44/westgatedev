@@ -5,6 +5,7 @@
     foreach ( $feat_img_1 as $img ) {
       $feat_img_1 = $img;
     }
+
     $feat_url_2 = rwmb_meta( 'wg_url2');
     $feat_img_2 = rwmb_meta( 'wg_img2');
     foreach ( $feat_img_2 as $img ) {

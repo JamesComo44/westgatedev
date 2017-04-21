@@ -20,15 +20,23 @@ require_once(get_template_directory().'/assets/functions/comments.php');
 // Replace 'older/newer' post links with numbered navigation
 require_once(get_template_directory().'/assets/functions/page-navi.php');
 
+// Theme plugin that adds an image upload field to taxonomies
+require_once(get_template_directory().'/assets/functions/taxonomy-term-image.php');
+
 // Adds support for multiple languages
 require_once(get_template_directory().'/assets/translation/translation.php');
 
-add_action( 'init', 'custom_taxonomy', 0 );
-add_action( 'init','create_post_type' );
+add_action( 'init', 'wg_custom_taxonomy', 0 );
+add_action( 'init','wg_create_post_type' );
 add_filter( 'rwmb_meta_boxes', 'wg_meta_boxes' );
 
+add_filter( 'taxonomy-term-image-taxonomy', 'wg_set_sermon_series_image_taxonomy' );
+add_filter( 'taxonomy-term-image-labels', 'wg_sermon_series_term_image_labels' );
+add_filter( 'taxonomy-term-image-meta-key', 'wg_sermon_series_image_meta_key' );
+add_filter( 'taxonomy-term-image-js-dir-url', 'wg_sermon_series_image_js_dir_url' );
 
-function create_post_type() {
+// Register Sermon Custom Post Type
+function wg_create_post_type() {
   $labels = array(
     'name' => 'Sermons',
     'singular_name' => 'Sermon',
@@ -70,8 +78,8 @@ function create_post_type() {
   register_post_type('wg_sermon',$args);
 }
 
-// Register Custom Taxonomy
-function custom_taxonomy() {
+// Register Sermon Series Custom Taxonomy
+function wg_custom_taxonomy() {
 
   $labels = array(
     'name'                       => _x( 'Sermon Series', 'Series', 'wg_wp' ),
@@ -108,56 +116,93 @@ function custom_taxonomy() {
 
 }
 
-
+// Add meta boxes using the Register Meta Boxes Plugin
 function wg_meta_boxes( $meta_boxes ) {
     $prefix = 'wg_';
 
-    $meta_boxes[] = array(
-        'id'         => 'wg_feat_1',
-        'title'      => __( 'Feature Spot 1 (far left)', 'wg_wp' ),
-        'post_types' => 'page',
-        'fields'     => array(
-            array(
-                'name'             => __( 'Image Advanced Upload', 'wg_feat_1_' ),
-                'id'               => "{$prefix}img1",
-                'type'             => 'image_advanced',
-                'max_file_uploads' => 1,
-            ),
-            array(
-                'name' => __( 'URL', 'wg_feat_1_' ),
-                'id'   => "{$prefix}url1",
-                'type' => 'text',
-                'size' => '40',
-                'std'  => 'http://westgatechurch.com/',
-            ),
-        ),
-    );
+    // Get the current post ID
+    if ( isset( $_GET['post'] ) ) {
+      $post_id = intval( $_GET['post'] );
+    } elseif ( isset( $_POST['post_ID'] ) ) {
+      $post_id = intval( $_POST['post_ID'] );
+    } else {
+      $post_id = false;
+    }
 
+    $post_id = (int) $post_id;
 
-    $meta_boxes[] = array(
-        'id'         => 'wg_feat_2',
-        'title'      => __( 'Feature Spot 2 (far right)', 'wg_wp' ),
-        'post_types' => 'page',
-        'fields'     => array(
-            array(
-                'name'             => __( 'Image Advanced Upload', 'wg_feat_2_' ),
-                'id'               => "{$prefix}img2",
-                'type'             => 'image_advanced',
-                'max_file_uploads' => 1,
-            ),
-            array(
-                'name' => __( 'URL', 'wg_feat_2_' ),
-                'id'   => "{$prefix}url2",
-                'type' => 'text',
-                'size' => '40',
-                'std'  => 'http://westgatechurch.com/',
-            ),
-        ),
-    );
+    // Only display the following metaboxes on the frontpage (id = 29)
+    if ( $post_id == 29 || ! is_admin() ) {
+      $meta_boxes[] = array(
+          'id'         => 'wg_feat_1',
+          'title'      => __( 'Feature Spot 1 (far left)', 'wg_wp' ),
+          'post_types' => 'page',
+          'fields'     => array(
+              array(
+                  'name'             => __( 'Image Advanced Upload', 'wg_feat_1_' ),
+                  'id'               => "{$prefix}img1",
+                  'type'             => 'image_advanced',
+                  'max_file_uploads' => 1,
+              ),
+              array(
+                  'name' => __( 'URL', 'wg_feat_1_' ),
+                  'id'   => "{$prefix}url1",
+                  'type' => 'text',
+                  'size' => '40',
+                  'std'  => 'http://westgatechurch.com/',
+              ),
+          ),
+      );
+
+      $meta_boxes[] = array(
+          'id'         => 'wg_feat_2',
+          'title'      => __( 'Feature Spot 2 (far right)', 'wg_wp' ),
+          'post_types' => 'page',
+          'fields'     => array(
+              array(
+                  'name'             => __( 'Image Advanced Upload', 'wg_feat_2_' ),
+                  'id'               => "{$prefix}img2",
+                  'type'             => 'image_advanced',
+                  'max_file_uploads' => 1,
+              ),
+              array(
+                  'name' => __( 'URL', 'wg_feat_2_' ),
+                  'id'   => "{$prefix}url2",
+                  'type' => 'text',
+                  'size' => '40',
+                  'std'  => 'http://westgatechurch.com/',
+              ),
+          ),
+      );
+    }
 
     return $meta_boxes;
 }
 
+// Adds an image upload meta field to the Sermon Series Custom Taxonomy
+function wg_set_sermon_series_image_taxonomy( $taxonomy ) {
+  return 'series';
+}
+
+// Change the field & button text for the Sermon Series Custom Taxonomy image uploader
+function wg_sermon_series_term_image_labels( $labels ) {
+  $labels['fieldTitle']       = __( 'Series Featured Image', 'wg_wp' );
+  $labels['fieldDescription'] = __( 'Select or upload an image to represent this series.', 'wg_wp' );
+  $labels['modalTitle']       = __( 'Select or upload an image for this series', 'wg_wp' );
+  $labels['adminColumnTitle'] = __( 'Featured Image', 'wg_wp' );
+
+  return $labels;
+}
+
+// Sets the meta key used to save the image ID in the Sermon Series meta data
+function wg_sermon_series_image_meta_key( $term_meta_key ) {
+  return 'series_featured_image';
+}
+
+// Points to the location of the required js file for the Sermon Series image uploader
+function wg_sermon_series_image_js_dir_url( $file_path ) {
+  return get_template_directory_uri() . '/assets/js';
+}
 
 
 // Remove 4.2 Emoji Support
