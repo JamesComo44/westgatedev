@@ -4488,6 +4488,11 @@ SERMON POST TYPE STYLES
 .current-series header {
   padding: 0 2em; }
 
+.current-series-head-text-fallback {
+  text-decoration: underline;
+  font-weight: bold;
+  text-align: center; }
+
 .current-series-heading {
   font-size: 0.75em;
   color: #12A89D;

@@ -11,16 +11,10 @@
         <main id="main" role="main" class="medium-12">
           <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
             <div class="medium-7 columns sermon-content">
-
                   <?php get_template_part( 'parts/loop', 'sermon' ); ?>
             </div>
             <div class="medium-5 columns sermon-sidebar">
               <aside class="current-series">
-                <header>
-                  <h3 class="current-series-heading">Currently listening to this series:</h3>
-                  <?php echo the_post_thumbnail('full') ?>
-                </header>
-
                 <?php
                   $tax = get_the_terms($post, 'series');
                   $slug = $tax[0]->slug;
@@ -39,9 +33,21 @@
                   );
 
                   $series_query = new WP_Query( $args );
-
                   $series_description = term_description( $tax[0]->term_id, 'series' );
                 ?>
+
+                <header>
+                  <h3 class="current-series-heading">Currently listening to this series:</h3>
+                  <?php if (rwmb_meta( 'wg_override_series_img' ) && has_post_thumbnail()) : ?>
+                    <?php echo the_post_thumbnail('full'); ?>
+                  <?php elseif ($tax[0]->term_image) : ?>
+                    <?php echo wp_get_attachment_image($tax[0]->term_image, 'full'); ?>
+                  <?php elseif (has_post_thumbnail()) : ?>
+                    <?php echo the_post_thumbnail('full'); ?>
+                  <?php else : ?>
+                    <h4 class="current-series-head-text-fallback"><?php echo $tax[0]->name; ?></h4>
+                  <?php endif; ?>
+                </header>
 
                 <?php if ( $series_query->have_posts() && ! empty( $series_description ) ): ?>
                   <div class="current-series-description"><?php echo $series_description; ?></div>

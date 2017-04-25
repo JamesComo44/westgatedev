@@ -32,6 +32,12 @@ SERMON POST TYPE STYLES
   }
 }
 
+.current-series-head-text-fallback {
+  text-decoration: underline;
+  font-weight: bold;
+  text-align: center;
+}
+
 .current-series-heading {
   font-size: 0.75em;
   color: map-get($foundation-palette, primary);

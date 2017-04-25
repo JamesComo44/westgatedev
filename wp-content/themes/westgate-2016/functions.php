@@ -176,6 +176,23 @@ function wg_meta_boxes( $meta_boxes ) {
       );
     }
 
+    $meta_boxes[] = array(
+        'id'         => 'wg_sermon_image_override',
+        'title'      => __( 'Override Series Featured Image', 'wg_wp' ),
+        'post_types' => 'wg_sermon',
+        'context'    => 'side',
+        'priority'   => 'low',
+        'fields'     => array(
+            array(
+                'name' => __( 'Sidebar Image', 'wg_wp' ),
+                'id'   => "{$prefix}override_series_img",
+                'desc' => __( 'Checking this box will use the featured image for this sermon instead of the series featured image.', 'wg_wp' ),
+                'type' => 'checkbox',
+                'std'  => 0,
+            ),
+        ),
+    );
+
     return $meta_boxes;
 }
 
