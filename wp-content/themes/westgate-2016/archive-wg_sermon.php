@@ -74,7 +74,7 @@
               <?php if ( ! empty( $series['image_id'] ) ) : ?>
                 <?php echo wp_get_attachment_image( $series['image_id'], 'full' ); ?>
               <?php else : ?>
-                <?php echo $series['name']; ?>
+                <span class="series-placeholder-name"><?php echo $series['name']; ?></span>
                 <img src="<?php bloginfo('template_directory'); ?>/assets/images/sermon_placeholder.jpg" alt="">
               <?php endif; ?>
             </a>
