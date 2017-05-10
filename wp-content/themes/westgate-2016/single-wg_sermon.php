@@ -16,8 +16,8 @@
             <div class="medium-5 columns sermon-sidebar">
               <aside class="current-series">
                 <?php
-                  $tax = get_the_terms($post, 'series');
-                  $slug = $tax[0]->slug;
+                  $tax = wg_first_term( 'series', false, $post->ID );
+                  $slug = $tax->slug;
                   $current_sermon = get_the_id();
 
                   $args = array(
@@ -33,19 +33,19 @@
                   );
 
                   $series_query = new WP_Query( $args );
-                  $series_description = term_description( $tax[0]->term_id, 'series' );
+                  $series_description = term_description( $tax->term_id, 'series' );
                 ?>
 
                 <header>
                   <h3 class="current-series-heading">Currently listening to this series:</h3>
                   <?php if (rwmb_meta( 'wg_override_series_img' ) && has_post_thumbnail()) : ?>
                     <?php echo the_post_thumbnail('full'); ?>
-                  <?php elseif ($tax[0]->term_image) : ?>
-                    <?php echo wp_get_attachment_image($tax[0]->term_image, 'full'); ?>
+                  <?php elseif ($tax->term_image) : ?>
+                    <?php echo wp_get_attachment_image($tax->term_image, 'full'); ?>
                   <?php elseif (has_post_thumbnail()) : ?>
                     <?php echo the_post_thumbnail('full'); ?>
                   <?php else : ?>
-                    <h4 class="current-series-head-text-fallback"><?php echo $tax[0]->name; ?></h4>
+                    <h4 class="current-series-head-text-fallback"><?php echo $tax->name; ?></h4>
                   <?php endif; ?>
                 </header>
 
