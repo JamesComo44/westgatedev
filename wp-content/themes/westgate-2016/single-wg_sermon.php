@@ -23,7 +23,7 @@
                   $args = array(
                     'post_type' => 'wg_sermon',
                     'order' => 'ASC',
-                    'posts_per_page' => 500,
+                    'posts_per_page' => 100,
                     'tax_query' => array(
                       array(
                         'taxonomy' => 'series',
