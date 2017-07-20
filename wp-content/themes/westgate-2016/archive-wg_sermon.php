@@ -64,7 +64,7 @@
     <header class="hero">
       <img src="<?php bloginfo('template_directory'); ?>/assets/images/inner_hero.jpg" alt="">
       <h1 class="hero-message sermons-archive">Sermons</h1>
-      <p class="hero-description">This is a test meta description. The lazy brown dog jumped over the quick fox. Sermons archive meta description. It has to be exactly 150 words. Test.</p>
+      <p class="hero-description">Check out our archive of Westgate Church sermon series by Pastor Dwayne Terry and other speakers centered on different topics of God’s calling for our lives.</p>
     </header>
 
     <div id="inner-content" class="row">
