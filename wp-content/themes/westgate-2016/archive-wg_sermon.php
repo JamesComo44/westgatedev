@@ -63,7 +63,7 @@
   <div id="content">
     <header class="hero">
       <img src="<?php bloginfo('template_directory'); ?>/assets/images/inner_hero.jpg" alt="">
-      <h1 class="hero-message">Sermons</h1>
+      <h1 class="hero-message sermons-archive">Sermons</h1>
       <p class="hero-description">This is a test meta description. The lazy brown dog jumped over the quick fox. Sermons archive meta description. It has to be exactly 150 words. Test.</p>
     </header>
 

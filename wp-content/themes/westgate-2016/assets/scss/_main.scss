@@ -137,15 +137,17 @@ HERO STYLES
 	font-size: 1.4em;
 	font-style: italic;
 	font-weight: bold;
-  -webkit-transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
 
 	@media screen and (min-width: 40em) {
 		font-size: 2em;
 	}
 
-	@include breakpoint(medium) {
-		top: 25%;
+	&.sermons-archive {
+		@media screen and (max-width: 40em) {
+			top: 25%;
+		}
 	}
 }
 
@@ -158,7 +160,7 @@ HERO STYLES
     margin: 45px 0 0;
 	color: #fefefe;
 	
-	@include breakpoint(medium) {
+	@media screen and (max-width: 40em) {
 		margin-top: 16px;
 		font-size: 14px;
 	}
