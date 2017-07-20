@@ -3975,9 +3975,12 @@ HERO STYLES
   @media screen and (min-width: 40em) {
     .hero-message {
       font-size: 2em; } }
+  @media screen and (max-width: 64em) {
+    .hero-message.sermons-archive {
+      top: 30%; } }
   @media screen and (max-width: 40em) {
     .hero-message.sermons-archive {
-      top: 25%; } }
+      top: 15%; } }
 
 .hero-description {
   position: absolute;
@@ -3987,9 +3990,12 @@ HERO STYLES
   transform: translateY(-50%);
   margin: 45px 0 0;
   color: #fefefe; }
+  @media screen and (max-width: 64em) {
+    .hero-description {
+      margin-top: 22px; } }
   @media screen and (max-width: 40em) {
     .hero-description {
-      margin-top: 16px;
+      margin-top: 13px;
       font-size: 14px; } }
 
 /*********************

@@ -145,8 +145,11 @@ HERO STYLES
 	}
 
 	&.sermons-archive {
+		@media screen and (max-width: 64em) {
+			top: 30%;
+		}
 		@media screen and (max-width: 40em) {
-			top: 25%;
+			top: 15%;
 		}
 	}
 }
@@ -160,8 +163,11 @@ HERO STYLES
     margin: 45px 0 0;
 	color: #fefefe;
 	
+	@media screen and (max-width: 64em) {
+		margin-top: 22px;
+	}
 	@media screen and (max-width: 40em) {
-		margin-top: 16px;
+		margin-top: 13px;
 		font-size: 14px;
 	}
 }
