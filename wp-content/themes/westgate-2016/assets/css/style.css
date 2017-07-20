@@ -3975,6 +3975,22 @@ HERO STYLES
   @media screen and (min-width: 40em) {
     .hero-message {
       font-size: 2em; } }
+  @media screen and (min-width: 40em) {
+    .hero-message {
+      top: 25%; } }
+
+.hero-description {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 45px 0 0;
+  color: #fefefe; }
+  @media screen and (min-width: 40em) {
+    .hero-description {
+      margin-top: 16px;
+      font-size: 14px; } }
 
 /*********************
 POSTS & CONTENT STYLES

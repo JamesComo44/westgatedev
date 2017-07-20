@@ -143,6 +143,25 @@ HERO STYLES
 	@media screen and (min-width: 40em) {
 		font-size: 2em;
 	}
+
+	@include breakpoint(medium) {
+		top: 25%;
+	}
+}
+
+.hero-description {
+	position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 45px 0 0;
+	color: #fefefe;
+	
+	@include breakpoint(medium) {
+		margin-top: 16px;
+		font-size: 14px;
+	}
 }
 
 /*********************
