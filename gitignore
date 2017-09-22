@@ -29,6 +29,9 @@ Thumbs.db
 .codekit-cache
 .sass-cache
 
+# PhpStorm
+.idea/
+
 # Icon must end with two \r
 Icon
 
