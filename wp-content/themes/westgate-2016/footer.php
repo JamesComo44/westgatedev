@@ -15,9 +15,11 @@
 											<aside class="medium-6 columns">
 												<address class="church-address">
 													<strong>Westgate Church</strong><br>
+													(678) 310-7141 <br>
 													4010 Fambrough Dr. <br>
 													Powder Springs, GA 30127 <br>
 												</address>
+												<a href="https://goo.gl/maps/2S29NcWtgVG2">Get Driving Directions</a>
 
 												<h2 class="service-time">SUNDAYS at 10:30</h2>
 											</aside>
@@ -29,7 +31,7 @@
 												<a class="footer-social-icon" href="https://twitter.com/westgate_church" target="_blank">
 													<img src="<?php bloginfo('template_directory'); ?>/assets/images/twitter.png" alt="Follow us on Twitter">
 												</a>
-												<a class="footer-social-icon" href="mailto:heath.houston@me.com">
+												<a class="footer-social-icon" href="mailto:admin@westgate.church">
 													<img src="<?php bloginfo('template_directory'); ?>/assets/images/email.png" alt="Email us">
 												</a>
 											</aside>
