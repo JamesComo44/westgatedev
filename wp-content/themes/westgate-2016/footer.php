@@ -15,11 +15,11 @@
 											<aside class="medium-6 columns">
 												<address class="church-address">
 													<strong>Westgate Church</strong><br>
-													(678) 310-7141 <br>
+													<a href="tel:678-310-7141">(678) 310-7141</a> <br>
 													4010 Fambrough Dr. <br>
 													Powder Springs, GA 30127 <br>
+													<a href="https://goo.gl/maps/2S29NcWtgVG2">Get Driving Directions</a>
 												</address>
-												<a href="https://goo.gl/maps/2S29NcWtgVG2">Get Driving Directions</a>
 
 												<h2 class="service-time">SUNDAYS at 10:30</h2>
 											</aside>
