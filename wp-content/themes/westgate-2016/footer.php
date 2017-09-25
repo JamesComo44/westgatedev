@@ -15,7 +15,7 @@
 											<aside class="medium-6 columns">
 												<address class="church-address">
 													<strong>Westgate Church</strong><br>
-													<strong>at Baggett Elementary</strong><br>
+													at Baggett Elementary<br>
 													948 Williams Lake Rd<br>
 													Powder Springs, GA 30127 <br>
 													<a href="https://goo.gl/maps/2S29NcWtgVG2">Get Driving Directions</a><br>
